@@ -1,6 +1,6 @@
 cask "unmute" do
-  version "1.3.2"
-  sha256 "5b6831135e20406069e44b42e92e64ce3b269fc3fb4ac5b2f361bb4e3bd3bbb2"
+  version "1.3.3"
+  sha256 "6bab4aa33218e119a09eac8dc1719d4a9ec8a6be9d9bebb344f6faa4c6baf752"
 
   url "https://github.com/arpitpatel25/unmute-dictation/releases/download/v#{version}/unmute-#{version}-arm64.dmg",
       verified: "github.com/arpitpatel25/unmute-dictation/"
