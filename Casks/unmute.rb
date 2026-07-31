@@ -1,12 +1,12 @@
 cask "unmute" do
-  version "1.3.6"
-  sha256 "9ec82a041a000fb22daa1d5b7183895afe4c1bc31da179b4534b4d67c6093971"
+  version "1.4.14"
+  sha256 "599068feee4863097890290ce34c269e90c23225a719d66e668317a76c1f5459"
 
-  url "https://github.com/arpitpatel25/unmute-dictation/releases/download/v#{version}/unmute-#{version}-arm64.dmg",
-      verified: "github.com/arpitpatel25/unmute-dictation/"
+  url "https://github.com/arpitpatel25/unmute/releases/download/v#{version}/unmute-#{version}-arm64.dmg",
+      verified: "github.com/arpitpatel25/unmute/"
   name "unmute"
-  desc "Voice-first dictation for macOS"
-  homepage "https://github.com/arpitpatel25/unmute-dictation"
+  desc "Voice-first dictation and coding-agent control"
+  homepage "https://arpitpatel25.github.io/unmute/"
 
   livecheck do
     url :url
@@ -14,14 +14,18 @@ cask "unmute" do
   end
 
   auto_updates true
-
-  depends_on macos: ">= :big_sur"
+  # The app declares LSMinimumSystemVersion 12.0. This read :big_sur while the
+  # cask tracked the older dictation-only build; leaving it would let a Big Sur
+  # user install a binary that cannot launch.
+  depends_on macos: :monterey
   depends_on arch: :arm64
 
   app "unmute.app"
 
   zap trash: [
+    "~/.unmute",
     "~/Library/Application Support/unmute",
+    "~/Library/Caches/com.arpitpatel.unmute",
     "~/Library/Preferences/com.arpitpatel.unmute.plist",
     "~/Library/Saved Application State/com.arpitpatel.unmute.savedState",
   ]
