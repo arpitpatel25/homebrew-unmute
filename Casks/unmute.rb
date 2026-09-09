@@ -1,6 +1,6 @@
 cask "unmute" do
-  version "1.5.22"
-  sha256 "68256bf2ffb54375548e622ae12b513b8b1e3face6bac0ffef504bd833d1fab7"
+  version "1.5.23"
+  sha256 "91f8f5e8b760fdb1d0c53dcf563b3515ee31ac0ec7730054fdae927f3e617ca1"
 
   url "https://github.com/arpitpatel25/unmute/releases/download/v#{version}/unmute-#{version}-arm64.dmg",
       verified: "github.com/arpitpatel25/unmute/"
